@@ -74,7 +74,8 @@ The app will automatically deploy and be available at a URL like: `https://your-
 - ✅ **Automatic dependency installation** from `requirements.txt`
 - ✅ **Model files included** in repository (no upload needed)
 - ✅ **Optimized with caching** for better performance
-- ✅ **TensorFlow version** compatible with Streamlit Cloud
+- ✅ **Python 3.11 compatibility** specified for stable deployment
+- ✅ **TensorFlow CPU version** optimized for cloud deployment
 
 ## 🔧 Local Development
 
