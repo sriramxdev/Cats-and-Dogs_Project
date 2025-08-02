@@ -16,13 +16,13 @@
    - Recompile with safe settings
    - Better error messages
 
-3. **Current Requirements:**
+3. **Current Requirements (Fixed):**
    ```
    streamlit==1.28.0
    tensorflow==2.20.0rc0  # Pre-release for Python 3.13 support
-   Pillow==10.0.1
-   numpy==1.26.0
-   protobuf==4.23.4
+   Pillow>=10.0.0         # Allow version flexibility for builds
+   numpy>=1.26.0          # Compatible with TF 2.20
+   protobuf>=5.28.0       # Required by TensorFlow 2.20.0rc0
    ```
 
 ### Code Enhancements:
