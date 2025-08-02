@@ -1,13 +1,12 @@
 # Cat vs Dog Image Classifier
 
-This project is a simple web app for classifying images as either a cat or a dog using a pre-trained Keras model. The app is built with Streamlit and allows users to upload their own model and test images through an interactive interface.
+This project is a simple web app for classifying images as either a cat or a dog using a CNN Keras model. The app is built with Streamlit and allows users to upload their own model and test images through an interactive interface.
 
 ## Live Demo
 
 The model is deployed on Hugging Face Spaces and can be tested here: [Cats and Dogs Classifier](https://huggingface.co/spaces/sriramxdev/Cats-and-Dogs-Classifier)
 
 ## Features
-- Upload your own Keras model (`.keras` or `.h5`)
 - Upload an image (`.jpg`, `.jpeg`, `.png`)
 - Get instant predictions with confidence scores
 
@@ -42,3 +41,4 @@ The model is deployed on Hugging Face Spaces and can be tested here: [Cats and D
 ---
 
 **Author:** sriramxdev
+
