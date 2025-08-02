@@ -86,22 +86,15 @@ st.markdown("""
 def load_model():
     """Load the pre-trained model with caching for better performance"""
     try:
-        # Try to load the .keras model first (recommended format)
+        # Load the .keras model (recommended format)
         model_path = "cats_dogs_savedmodel.keras"
         if os.path.exists(model_path):
             model = tf.keras.models.load_model(model_path)
             st.success("✅ Model loaded successfully!")
             return model
         else:
-            # Fallback to .h5 format
-            model_path = "cats_dogs_model.h5"
-            if os.path.exists(model_path):
-                model = tf.keras.models.load_model(model_path)
-                st.success("✅ Model loaded successfully!")
-                return model
-            else:
-                st.error("❌ Model file not found. Please ensure the model file is in the repository.")
-                return None
+            st.error("❌ Model file not found. Please ensure the model file is in the repository.")
+            return None
     except Exception as e:
         st.error(f"❌ Error loading model: {e}")
         return None

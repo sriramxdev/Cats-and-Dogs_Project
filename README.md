@@ -39,8 +39,7 @@ The trained model achieves high accuracy in distinguishing between cats and dogs
 ```
 ├── app.py                      # Streamlit web application
 ├── requirements.txt            # Python dependencies
-├── cats_dogs_model.h5         # Trained model (H5 format)
-├── cats_dogs_savedmodel.keras  # Trained model (Keras format)
+├── cats_dogs_savedmodel.keras  # Trained CNN model
 ├── cats_and_dogs_CNN.ipynb    # Complete training pipeline notebook
 └── README.md                   # Project documentation
 ```
