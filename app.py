@@ -1,10 +1,29 @@
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"  # Suppress TensorFlow warnings
 
 import streamlit as st
-import tensorflow as tf
+
+# Try to import TensorFlow with error handling
+try:
+    import tensorflow as tf
+    # Disable GPU if available to avoid memory issues on Streamlit Cloud
+    tf.config.experimental.set_memory_growth(tf.config.list_physical_devices('GPU')[0], True) if tf.config.list_physical_devices('GPU') else None
+    TF_AVAILABLE = True
+except ImportError as e:
+    st.error(f"TensorFlow import failed: {e}")
+    TF_AVAILABLE = False
+except Exception as e:
+    st.warning(f"TensorFlow setup warning: {e}")
+    TF_AVAILABLE = True
+
 from PIL import Image
 import numpy as np
+
+# Only proceed if TensorFlow is available
+if not TF_AVAILABLE:
+    st.error("❌ TensorFlow is not available. Please check the deployment configuration.")
+    st.stop()
 
 # Configure page
 st.set_page_config(
@@ -89,7 +108,18 @@ def load_model():
         # Load the .keras model (recommended format)
         model_path = "cats_dogs_savedmodel.keras"
         if os.path.exists(model_path):
-            model = tf.keras.models.load_model(model_path)
+            with st.spinner("Loading AI model..."):
+                # Load with additional error handling for TensorFlow compatibility
+                model = tf.keras.models.load_model(
+                    model_path,
+                    compile=False  # Skip compilation to avoid potential issues
+                )
+                # Recompile with basic settings
+                model.compile(
+                    optimizer='adam',
+                    loss='binary_crossentropy',
+                    metrics=['accuracy']
+                )
             st.success("✅ Model loaded successfully!")
             return model
         else:
@@ -97,6 +127,7 @@ def load_model():
             return None
     except Exception as e:
         st.error(f"❌ Error loading model: {e}")
+        st.info("💡 This might be due to TensorFlow version compatibility. Try refreshing the page.")
         return None
 
 # Load model
