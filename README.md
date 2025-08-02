@@ -1,6 +1,6 @@
 # 🐱🐶 Cats vs Dogs Classifier
 
-A deep learning web application that classifies images of cats and dogs using a Convolutional Neural Network (CNN) built with TensorFlow and deployed on Streamlit Community Cloud.
+A comprehensive deep learning project that demonstrates image classification using Convolutional Neural Networks (CNN). This project includes a complete machine learning pipeline from data preprocessing to model deployment, featuring a trained CNN model that accurately classifies images of cats and dogs.
 
 ## 🚀 Live Demo
 
@@ -8,30 +8,40 @@ A deep learning web application that classifies images of cats and dogs using a 
 
 ## 📖 About
 
-This project uses a trained CNN model to classify uploaded images as either cats or dogs. The model achieves high accuracy and provides confidence scores for its predictions.
+This project showcases the complete workflow of building an image classification system:
+
+- **Data Processing**: Downloads and organizes the Microsoft Cats and Dogs dataset (25,000 images)
+- **Model Architecture**: Custom CNN with convolutional layers, pooling, and dropout for regularization
+- **Training Pipeline**: Includes data augmentation, early stopping, and learning rate scheduling
+- **Model Evaluation**: Comprehensive evaluation with confusion matrix and classification reports
+- **Web Deployment**: Interactive Streamlit web application for real-time predictions
+
+The trained model achieves high accuracy in distinguishing between cats and dogs and provides confidence scores for predictions.
 
 ### Features
 - 📸 Easy image upload interface
-- 🤖 Real-time AI predictions
-- 📊 Confidence score visualization
-- 🎯 User-friendly results display
+- 🤖 Real-time AI predictions with confidence scores
+- 📊 Confidence score visualization with progress bars
+- 🎯 Clean, user-friendly results display
 - 📱 Mobile-responsive design
+- 👨‍💻 Author attribution and GitHub integration
 
 ## 🛠️ Technology Stack
 
 - **Frontend**: Streamlit
 - **Backend**: TensorFlow/Keras
-- **Image Processing**: PIL (Pillow)
+- **Image Processing**: PIL (Pillow), OpenCV
+- **Data Analysis**: NumPy, Pandas, Matplotlib, Seaborn
 - **Deployment**: Streamlit Community Cloud
 
 ## 📁 Project Structure
 
 ```
-├── app.py                      # Main Streamlit application
+├── app.py                      # Streamlit web application
 ├── requirements.txt            # Python dependencies
 ├── cats_dogs_model.h5         # Trained model (H5 format)
 ├── cats_dogs_savedmodel.keras  # Trained model (Keras format)
-├── cats_and_dogs_CNN.ipynb    # Training notebook
+├── cats_and_dogs_CNN.ipynb    # Complete training pipeline notebook
 └── README.md                   # Project documentation
 ```
 
@@ -88,10 +98,24 @@ Upload test images of cats and dogs to verify the model predictions.
 ## 📊 Model Information
 
 - **Architecture**: Convolutional Neural Network (CNN)
-- **Training Data**: Cats and Dogs dataset
+- **Dataset**: Microsoft Cats and Dogs dataset (25,000 images)
 - **Input Size**: 150x150 pixels (RGB)
 - **Output**: Binary classification (0 = Cat, 1 = Dog)
 - **Framework**: TensorFlow/Keras
+- **Training Features**: Data augmentation, early stopping, learning rate scheduling
+
+## 📓 Jupyter Notebook
+
+The `cats_and_dogs_CNN.ipynb` notebook contains the complete machine learning pipeline:
+
+1. **Data Download & Preparation**: Automated dataset download and organization
+2. **Data Visualization**: Sample images and dataset statistics
+3. **Data Preprocessing**: Image augmentation and generator setup
+4. **Model Architecture**: Custom CNN design with multiple layers
+5. **Model Training**: Training with callbacks and monitoring
+6. **Model Evaluation**: Performance metrics and confusion matrix
+7. **Prediction Visualization**: Test predictions with confidence scores
+8. **Model Saving**: Export trained model in multiple formats
 
 ## 🤝 Contributing
 

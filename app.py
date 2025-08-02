@@ -13,8 +13,74 @@ st.set_page_config(
     layout="centered"
 )
 
+# Custom CSS for Material Design theme
+st.markdown("""
+<style>
+    /* Main container styling */
+    .main .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    /* Custom card styling */
+    .info-card {
+        background-color: #F5F5F5;
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #2196F3;
+        margin: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    /* Upload area styling */
+    .uploadedFile {
+        border: 2px dashed #2196F3;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+        background-color: #FAFAFA;
+    }
+    
+    /* Success/Error message styling */
+    .stSuccess, .stError, .stWarning {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    /* Progress bar styling */
+    .stProgress > div > div > div > div {
+        background-color: #2196F3;
+    }
+    
+    /* Button styling */
+    .stButton > button {
+        border-radius: 20px;
+        border: none;
+        background-color: #2196F3;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .stButton > button:hover {
+        background-color: #1976D2;
+        box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("🐱🐶 Cats vs Dogs Classifier")
 st.markdown("Upload an image and let our AI model predict whether it's a cat or a dog!")
+
+# Author information
+st.markdown("""
+<div style="text-align: center; padding: 10px; margin: 20px 0; background-color: #F5F5F5; border-radius: 10px; border-left: 4px solid #2196F3;">
+    <p style="margin: 0; color: #666; font-size: 0.9em;">
+        🚀 <strong>Created by:</strong> <a href="https://github.com/sriramxdev" target="_blank" style="color: #2196F3; text-decoration: none;">Sriram</a> | 
+        <em>Deep Learning Enthusiast</em>
+    </p>
+</div>
+""", unsafe_allow_html=True)
 
 @st.cache_resource
 def load_model():
@@ -101,22 +167,40 @@ elif model is None:
     
 # Add some helpful information
 st.markdown("---")
-st.markdown("### ℹ️ About this app")
-st.markdown("""
-This app uses a Convolutional Neural Network (CNN) trained to classify images of cats and dogs.
-- **Best results**: Upload clear, well-lit images with the animal as the main subject
-- **Supported formats**: JPG, JPEG, PNG
-- **Model confidence**: Higher percentages indicate more confident predictions
-""")
 
-st.markdown("### 🚀 How it works")
+# About section with material design card
 st.markdown("""
-1. Upload an image using the file uploader above
-2. The image is preprocessed and resized to match the model's input requirements
-3. The trained CNN model analyzes the image features
-4. The model outputs a prediction with confidence score
-""")
+<div class="info-card">
+    <h3 style="color: #2196F3; margin-top: 0;">ℹ️ About this app</h3>
+    <p>This app uses a Convolutional Neural Network (CNN) trained to classify images of cats and dogs.</p>
+    <ul style="margin-bottom: 0;">
+        <li><strong>Best results:</strong> Upload clear, well-lit images with the animal as the main subject</li>
+        <li><strong>Supported formats:</strong> JPG, JPEG, PNG</li>
+        <li><strong>Model confidence:</strong> Higher percentages indicate more confident predictions</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
+
+# How it works section with material design card
+st.markdown("""
+<div class="info-card">
+    <h3 style="color: #2196F3; margin-top: 0;">🚀 How it works</h3>
+    <ol style="margin-bottom: 0;">
+        <li>Upload an image using the file uploader above</li>
+        <li>The image is preprocessed and resized to match the model's input requirements</li>
+        <li>The trained CNN model analyzes the image features</li>
+        <li>The model outputs a prediction with confidence score</li>
+    </ol>
+</div>
+""", unsafe_allow_html=True)
 
 # Footer
 st.markdown("---")
-st.markdown("*Built with Streamlit and TensorFlow*")
+st.markdown("""
+<div style="text-align: center; padding: 15px; margin-top: 30px; background-color: #F5F5F5; border-radius: 10px;">
+    <p style="margin: 0; color: #666; font-size: 0.9em;">
+        💻 <strong>Built with</strong> <span style="color: #2196F3;">Streamlit</span> & <span style="color: #2196F3;">TensorFlow</span> | 
+        ⭐ <a href="https://github.com/sriramxdev/Cats-and-Dogs_Project" target="_blank" style="color: #2196F3; text-decoration: none;">Star on GitHub</a>
+    </p>
+</div>
+""", unsafe_allow_html=True)
