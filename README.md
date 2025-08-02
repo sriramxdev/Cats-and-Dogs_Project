@@ -4,7 +4,7 @@ A comprehensive deep learning project that demonstrates image classification usi
 
 ## 🚀 Live Demo
 
-[Try the app here!](your-streamlit-app-url) *(Update this URL after deployment)*
+[Try the app here!](https://huggingface.co/spaces/your-username/cats-and-dogs-classifier) *(Update this URL after deployment)*
 
 ## 📖 About
 
@@ -32,7 +32,7 @@ The trained model achieves high accuracy in distinguishing between cats and dogs
 - **Backend**: TensorFlow/Keras
 - **Image Processing**: PIL (Pillow), OpenCV
 - **Data Analysis**: NumPy, Pandas, Matplotlib, Seaborn
-- **Deployment**: Streamlit Community Cloud
+- **Deployment**: Hugging Face Spaces
 
 ## 📁 Project Structure
 
@@ -40,41 +40,36 @@ The trained model achieves high accuracy in distinguishing between cats and dogs
 ├── app.py                      # Streamlit web application
 ├── requirements.txt            # Python dependencies
 ├── cats_dogs_savedmodel.keras  # Trained CNN model
-├── cats_and_dogs_CNN.ipynb    # Complete training pipeline notebook
+├── cats_and_dogs_CNN.ipynb     # Complete training pipeline notebook
 └── README.md                   # Project documentation
 ```
 
-## 🚀 Deployment on Streamlit Community Cloud
+## 🚀 Deployment on Hugging Face Spaces
 
 ### Prerequisites
 1. GitHub account
-2. Streamlit Community Cloud account (free)
+2. Hugging Face account (free)
 
 ### Steps to Deploy
 
 1. **Fork this repository** to your GitHub account
-
-2. **Go to [share.streamlit.io](https://share.streamlit.io)**
-
-3. **Click "New app"**
-
-4. **Connect your GitHub account** if not already connected
-
-5. **Select your repository**: `your-username/Cats-and-Dogs_Project`
-
+2. **Go to [Hugging Face Spaces](https://huggingface.co/spaces)**
+3. **Click "Create new Space"**
+4. **Choose "Streamlit" as the SDK**
+5. **Connect your GitHub repository** or upload the files
 6. **Set the main file path**: `app.py`
+7. **Add a `runtime.txt` file** with `python-3.10` (already included)
+8. **Click "Create"**
 
-7. **Click "Deploy"**
+The app will automatically deploy and be available at a URL like: `https://huggingface.co/spaces/your-username/cats-and-dogs-classifier`
 
-The app will automatically deploy and be available at a URL like: `https://your-username-cats-and-dogs-project-app-xxx.streamlit.app/`
+### Important Notes for Hugging Face Spaces
 
-### Important Notes for Streamlit Community Cloud
-
-- ✅ **Free tier limitations**: 1GB RAM, shared CPU
+- ✅ **Free tier limitations**: 16GB storage, 2 vCPU, 16GB RAM (as of 2025)
 - ✅ **Automatic dependency installation** from `requirements.txt`
 - ✅ **Model files included** in repository (no upload needed)
 - ✅ **Optimized with caching** for better performance
-- ✅ **Python 3.11 compatibility** specified for stable deployment
+- ✅ **Python 3.10 compatibility** specified for stable deployment
 - ✅ **TensorFlow CPU version** optimized for cloud deployment
 
 ## 🔧 Local Development
@@ -133,7 +128,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - [Streamlit Documentation](https://docs.streamlit.io/)
 - [TensorFlow Documentation](https://www.tensorflow.org/)
-- [Streamlit Community Cloud](https://streamlit.io/cloud)
+- [Hugging Face Spaces](https://huggingface.co/spaces)
 
 ---
 
