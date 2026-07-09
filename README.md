@@ -37,12 +37,12 @@ The model is deployed on Hugging Face Spaces and can be tested here: [Cats and D
      3. View the prediction and confidence score.
 
 ## Notes
-- The model should be trained for binary classification (cat vs dog) and accept images as input.
+- The model is for binary classification (cat vs dog) and accept images as input.
 - The app normalizes images to the model's expected input size and scale.
 
 ---
 
-**Author:** sriramxdev
+**Author:** Sri Ram Sharma (sriramxdev).
 
 
 
